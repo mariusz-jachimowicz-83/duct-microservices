@@ -46,11 +46,11 @@
 (defn- error-configs [ms-id-key]
   {:production
    {[:duct.core/handler ms-id-key]
-    {:middleware ^:distinct [(ig/ref :duct.middleware.web/hide-errors)]}}
+    {:middleware ^:distinct [(ig/ref [:duct.middleware.web/hide-errors ms-id-key])]}}
 
    :development
    {[:duct.core/handler ms-id-key]
-    {:middleware ^:distinct [(ig/ref :duct.middleware.web/stacktrace)]}}})
+    {:middleware ^:distinct [(ig/ref [:duct.middleware.web/stacktrace ms-id-key])]}}})
 
 (defn- common-config [ms-id-key]
   {[:duct.middleware.web/not-found ms-id-key]
@@ -172,17 +172,17 @@
                         (apply duct/merge-configs))]
            cfg))})
 
-#_(defmethod ig/init-key :duct.microservice/web [key options]
+(defmethod ig/init-key :duct.microservice/web [key options]
   (do
     (println "== init microservice " key)
-    {:id "xxx"}))
+    options))
 
-#_(defmethod ig/init-key :duct.microservice/api [key options]
+(defmethod ig/init-key :duct.microservice/api [key options]
   (do
     (println "== init microservice " key)
-    {:id "xxx"}))
+    options))
 
-#_(defmethod ig/init-key :duct.microservice/site [key options]
+(defmethod ig/init-key :duct.microservice/site [key options]
   (do
     (println "== init microservice " key)
-    {:id "xxx"}))
+    options))

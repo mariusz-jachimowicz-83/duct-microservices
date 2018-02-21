@@ -13,6 +13,8 @@
   ;; lein cloverage --fail-threshold 95
   ;; lein kibit
   ;; lein eastwood
-  :profiles {:dev {:plugins [[lein-cloverage "1.0.10"]
-                             [lein-kibit "0.1.6"]
+  :profiles {:dev {:dependencies [[clj-http    "2.1.0"]
+                                  [duct/logger "0.2.1"]]
+                   :plugins [[lein-cloverage  "1.0.10"]
+                             [lein-kibit      "0.1.6"]
                              [jonase/eastwood "0.2.5"]]}})
