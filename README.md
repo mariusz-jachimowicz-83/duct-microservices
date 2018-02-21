@@ -3,9 +3,9 @@ Duct module for creating microservices
 
 ## TODO
 
-[x] configuration for launching multiple microservices (jetty servers on different ports)
-[]  separate migrator configuration for each microservice
-[]  handle Zookeper discoverability
+- [x] configuration for launching multiple microservices (jetty servers on different ports)
+- []  separate migrator configuration for each microservice
+- []  handle Zookeper discoverability
 
 ## Usage
 
