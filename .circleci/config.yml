@@ -1,0 +1,28 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/duct-microservices
+    docker:
+      - image: circleci/clojure:lein-2.8.1
+    environment:
+      # LEIN_FAST_TRAMPOLINE: yes
+      LEIN_ROOT: nbd
+      LC_ALL: C
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - duct-microservices-{{ checksum "project.clj" }}
+            # fallback to using the latest cache if no exact match is found
+            - duct-microservices-
+      - run: lein deps
+      - save_cache:
+          paths:
+            - ~/.m2
+            - ~/.lein
+          key: duct-microservices-{{ checksum "project.clj" }}
+      - run: lein test
+      - run: lein cloverage --fail-threshold 50
+      - run: lein kibit
+      - run: lein eastwood
