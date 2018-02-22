@@ -1,6 +1,8 @@
 # duct-microservices
 Duct module for creating microservices
 
+[![CircleCI](https://circleci.com/gh/mariusz-jachimowicz-83/duct-microservices.svg?style=svg)](https://circleci.com/gh/mariusz-jachimowicz-83/duct-microservices)
+
 ## TODO
 
 - [x] configuration for launching multiple microservices (jetty servers on different ports)
