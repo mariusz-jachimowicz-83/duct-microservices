@@ -1,4 +1,4 @@
-(ns duct-microservices.module
+(ns duct.module.microservices
   (:require
     [clojure.pprint]
     [clojure.string  :as string]
@@ -161,7 +161,7 @@
 (defn microservice-cfgs [config]
   (ig/find-derived config :duct/microservice))
 
-(defmethod ig/init-key :duct.module.web/microservices [key options]
+(defmethod ig/init-key :duct.module/microservices [key options]
   {:fn (fn [config]
          (let [ms-keys (->> config
                             microservice-cfgs

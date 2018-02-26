@@ -4,9 +4,9 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0-beta4"]
-                 [duct/core "0.6.1"]
-                 [duct/logger "0.2.1"]
-                 [integrant "0.6.1"]
+                 [duct/core       "0.6.1"]
+                 [duct/logger     "0.2.1"]
+                 [integrant       "0.6.1"]
                  [duct/module.web "0.6.3"]]
   :deploy-repositories [["clojars" {:sign-releases false}]]
 

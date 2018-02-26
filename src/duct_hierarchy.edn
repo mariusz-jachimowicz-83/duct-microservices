@@ -1,4 +1,4 @@
-{:duct.module.web/microservices [:duct/module]
+{:duct.module/microservices [:duct/module]
  :duct.microservice/web  [:duct/microservice]
  :duct.microservice/api  [:duct/microservice]
  :duct.microservice/site [:duct/microservice]}

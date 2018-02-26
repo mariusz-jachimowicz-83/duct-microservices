@@ -14,7 +14,7 @@ Duct module for creating microservices
 To add module to your configuration, add the `:duct.module.web/microservices` key:
 
 ```clojure
-{:duct.module.web/microservices {}}
+{:duct.module/microservices {}}
 ```
 
 Now we can specify 3 kinds of microservices (similar to duct module.web):

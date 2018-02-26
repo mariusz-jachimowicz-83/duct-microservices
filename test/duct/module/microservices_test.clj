@@ -1,12 +1,11 @@
-(ns duct-microservices.module-test
+(ns duct.module.microservices-test
   (:require
     [clj-http.client :as http]
     [clojure.pprint]
     [clojure.test :refer :all]
     [duct.core      :as duct]
     [duct.logger    :as logger]
-    [integrant.core :as ig]
-    [duct-microservices.main]))
+    [integrant.core :as ig]))
 
 (duct/load-hierarchy)
 
@@ -25,7 +24,7 @@
    [:duct.server.http/jetty :system/s1] {:port 3005}
    [:duct.server.http/jetty :system/s2] {:port 3006}
 
-   :duct.module.web/microservices {}
+   :duct.module/microservices {}
    [:duct.microservice/api :system/s1] {}
    [:duct.microservice/web :system/s2] {}})
 
