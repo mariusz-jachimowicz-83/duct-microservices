@@ -1,11 +1,11 @@
 (ns duct.module.microservices-test
   (:require
-    [clj-http.client :as http]
-    [clojure.pprint]
     [clojure.test :refer :all]
-    [duct.core      :as duct]
-    [duct.logger    :as logger]
-    [integrant.core :as ig]))
+    [clj-http.client :as http]
+    [duct.core       :as duct]
+    [duct.logger     :as logger]
+    [integrant.core  :as ig]
+    [fipp.edn        :refer [pprint]]))
 
 (duct/load-hierarchy)
 
@@ -40,7 +40,6 @@
                      (assoc-in [[:duct.server.http/jetty :system/s2] :handler] handler-2)
                      ig/init)]
       (try
-        #_(clojure.pprint/pprint system)
         (let [resp-1 (http/get "http://127.0.0.1:3005/")
               resp-2 (http/get "http://127.0.0.1:3006/")]
           (is (= (:status resp-1) 200))
