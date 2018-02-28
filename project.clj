@@ -3,12 +3,18 @@
   :url "https://github.com/mariusz-jachimowicz-83/duct-microservices"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.9.0-beta4"]
+  :dependencies [[org.clojure/clojure    "1.9.0-beta4"]
+                 [org.clojure/core.async "0.4.474"]
                  [duct/core        "0.6.1"]
                  [duct/logger      "0.2.1"]
                  [integrant        "0.6.1"]
                  [duct/module.web  "0.6.3"]
-                 [ring/ring-json   "0.4.0"]]
+                 [ring/ring-json   "0.4.0"]
+
+                 ;; Zookeeper
+                 [org.apache.curator/curator-framework "2.9.1"]
+                 [org.apache.curator/curator-test      "2.9.1"]
+                 [org.apache.zookeeper/zookeeper       "3.4.10"]]
 
   :deploy-repositories [["clojars" {:sign-releases false}]]
 
